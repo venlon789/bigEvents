@@ -13,7 +13,7 @@ $.ajaxPrefilter((option) => {
     }
      // 无论成功还是失败，最终都会调用complete
     option.complete=(res) => {
-        console.log(res);
+        // console.log(res);
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             localStorage.removeItem('token')
             location.href = '/login.html'

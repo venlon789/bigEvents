@@ -43,7 +43,7 @@ function getuserInfo() {
 const randerAvatar = (user) => {
     const name = user.nickname || user.username
     console.log(name);
-    $('#welcome').html(`欢迎${name}`)
+    $('#welcome').html(`欢迎 — ${name}`)
     if (user.user_pic !== null) {
         $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text-avatar').hide()
@@ -52,4 +52,9 @@ const randerAvatar = (user) => {
         const firstName = name[0].toUpperCase()
         $('.text-avatar').html(firstName).show()
     }
+}
+
+function change() {
+    $("#art_list").addClass('layui-this').next().removeClass('layui-this')
+    // $('#art_list').click()
 }
